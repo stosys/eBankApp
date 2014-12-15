@@ -76,23 +76,27 @@
   <div class="body">
     <form role="form" method="post" action="/accounts">
       <div class="form-group">
+        <label for="exampleInputFirstName1">First Name</label>
+        <input type="text" class="form-control" id="exampleInputFirstName1" placeholder="Enter first name">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputLastName1">Last Name</label>
+        <input type="text" class="form-control" id="exampleInputLastName1" placeholder="Enter last name">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputCNP1">CNP</label>
+        <input type="number" class="form-control" id="exampleInputCNP1" placeholder="Enter CNP">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputCI1">Email address</label>
+        <input type="text" class="form-control" id="exampleInputCI1" placeholder="Enter CI">
+      </div>
+      <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
         <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
       </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-      </div>
-      <!--div class="form-group">
-        <label for="exampleInputFile">File input</label>
-        <input type="file" id="exampleInputFile">
-        <p class="help-block">Example block-level help text here.</p>
-      </div>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox"> Check me out
-        </label>
-      </div-->
+
+
       <button type="submit" class="btn btn-default">Submit</button>
     </form>
   </div>
