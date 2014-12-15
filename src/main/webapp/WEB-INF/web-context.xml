@@ -22,7 +22,7 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <bean id="applicationProperties" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    <!--bean id="applicationProperties" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="location" value="classpath:database.properties"/>
     </bean>
 
@@ -31,7 +31,7 @@
         <property name="url" value="${db.url}" />
         <property name="username" value="${db.user}" />
         <property name="password" value="${db.pass}" />
-    </bean>
+    </bean-->
 
 
 
