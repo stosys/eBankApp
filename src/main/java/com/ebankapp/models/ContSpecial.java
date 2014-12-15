@@ -1,6 +1,6 @@
-/**
- * Created by Sergiu
- */
+package com.ebankapp.models;
+
+
 public class ContSpecial {
 
     private int idcs;

@@ -25,5 +25,8 @@
         <module name="eBankApp" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="eBankApp" target="1.6" />
+    </bytecodeTargetLevel>
   </component>
 </project>
