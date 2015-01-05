@@ -14,15 +14,14 @@
         http://www.springframework.org/schema/jdbc
         http://www.springframework.org/schema/jdbc/spring-jdbc.xsd">
 
-    <context:component-scan base-package="com.ebankapp.controllers"/>
-    <mvc:annotation-driven/>
+    <context:component-scan base-package="com.ebankapp" />
 
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/views/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <!--bean id="applicationProperties" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    <bean id="applicationProperties" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="location" value="classpath:database.properties"/>
     </bean>
 
@@ -31,18 +30,33 @@
         <property name="url" value="${db.url}" />
         <property name="username" value="${db.user}" />
         <property name="password" value="${db.pass}" />
-    </bean-->
+    </bean>
 
 
 
     <!--jdbc:initialize-database data-source="dataSource">
-           <jdbc:script location="/WEB-INF/import.sql" encoding="UTF-8" />
+           <jdbc:script location="/WEB-INF/eBank.sql" encoding="UTF-8" />
     </jdbc:initialize-database-->
 
-    <!--bean id="accountRepository" class="com.ebankapp.repositories.AccountServiceJDBC">
+    <!--bean id="accountRepository" class="com.ebankapp.repositories.AccountRepositoryJDBCDBC">
         <constructor-arg ref="dataSource"/>
     </bean-->
 
+    <mvc:annotation-driven >
+        <mvc:message-converters>
+            <ref bean="formHttpMessageConverter"/>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+    <bean id="formHttpMessageConverter" class="org.springframework.http.converter.FormHttpMessageConverter"/>
+
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <ref bean="formHttpMessageConverter"/>
+            </list>
+        </property>
+    </bean>
 
     <mvc:default-servlet-handler />
 

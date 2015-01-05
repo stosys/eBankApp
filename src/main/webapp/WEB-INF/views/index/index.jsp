@@ -89,8 +89,8 @@
       </div>
 
       <button type="submit" class="btn btn-default">Submit</button>
-      <button type="submit" action="" class="btn btn-default">Register account</button>
     </form>
+      <button type="button" onclick="location.href='/accounts'" class="btn btn-default">Register account</button>
   </div>
 </div>
 </body>

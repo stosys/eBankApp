@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Account Creator</title>
@@ -81,32 +82,32 @@
     <div class="body">
         <form role="form" method="post" action="/accounts">
             <div class="form-group">
-                <label for="inputFirstName1">First Name</label>
-                <input type="text" class="form-control" id="inputFirstName1" placeholder="Enter first name">
+                <label for="prenume">First Name</label>
+                <input type="text" class="form-control" name="prenume" placeholder="Enter first name">
             </div>
             <div class="form-group">
-                <label for="inputLastName1">Last Name</label>
-                <input type="text" class="form-control" id="inputLastName1" placeholder="Enter last name">
+                <label for="nume">Last Name</label>
+                <input type="text" class="form-control" name="nume" placeholder="Enter last name">
             </div>
             <div class="form-group">
-                <label for="inputCNP1">CNP</label>
-                <input type="number" class="form-control" id="inputCNP1" placeholder="Enter CNP">
+                <label for="cnp">CNP</label>
+                <input type="text" class="form-control" name="cnp" placeholder="Enter CNP">
             </div>
             <div class="form-group">
-                <label for="inputCI1">CI</label>
-                <input type="text" class="form-control" id="inputCI1" placeholder="Enter CI">
+                <label for="ci">CI</label>
+                <input type="text" class="form-control" name="ci" placeholder="Enter CI">
             </div>
             <div class="form-group">
-                <label for="inputEmail1">Email address</label>
-                <input type="email" class="form-control" id="inputEmail1" placeholder="Enter email">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" name="email" placeholder="Enter email">
             </div>
             <div class="form-group">
-                <label for="inputAddress1">Address</label>
-                <input type="text" class="form-control" id="inputAddress1" placeholder="Enter address">
+                <label for="domiciliu">Address</label>
+                <input type="text" class="form-control" name="domiciliu" placeholder="Enter address">
             </div>
             <div class="form-group">
-                <label for="inputPhone1">Phone number</label>
-                <input type="number" class="form-control" id="inputPhone1" placeholder="Enter phone number">
+                <label for="telefon">Phone number</label>
+                <input type="text" class="form-control" name="telefon" placeholder="Enter phone number">
             </div>
 
             <div class="dropdown">
@@ -121,7 +122,7 @@
                 </ul>
             </div>
 
-            <button type="submit" class="btn btn-default" formaction="confirm">Submit</button>
+            <button type="submit" class="btn btn-default">Submit</button>
         </form>
     </div>
 </div>

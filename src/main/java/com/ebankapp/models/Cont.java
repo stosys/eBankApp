@@ -5,10 +5,22 @@ import java.util.Date;
 
 public class Cont {
 
-    private String nrCont, nrCard, nume, prenume, cnp, ci, domiciliu, mail, telefon;
+    private String bcode, nrCont, nrCard, nume, prenume, cnp, ci, domiciliu, mail, telefon;
     private Date dataCr;
-    private int tip, bcode;
-    private float sold;
+    private int tip;
+    private double sold;
+
+    public Cont() {}
+
+    public long getIdc() {
+        return idc;
+    }
+
+    public void setIdc(long idc) {
+        this.idc = idc;
+    }
+
+    private long idc;
 
     public String getNrCont() {
         return nrCont;
@@ -98,19 +110,19 @@ public class Cont {
         this.tip = tip;
     }
 
-    public int getBcode() {
+    public String getBcode() {
         return bcode;
     }
 
-    public void setBcode(int bcode) {
+    public void setBcode(String bcode) {
         this.bcode = bcode;
     }
 
-    public float getSold() {
+    public double getSold() {
         return sold;
     }
 
-    public void setSold(float sold) {
+    public void setSold(double sold) {
         this.sold = sold;
     }
 }
