@@ -1,7 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Home</title>
+  <title>User Register</title>
+  <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 
   <!-- Optional theme -->
@@ -71,19 +73,26 @@
     <!-- /.container-fluid -->
   </nav>
   <div class="body">
-    <form role="form" method="post" action="/index">
+    <form role="form" method="post" action="/usercr">
       <div class="form-group">
-        <label for="inputUserName1">Username or email</label>
-        <input type="text" class="form-control" id="inputUserName1" placeholder="Username or email">
+        <label>BCODE</label>
+        <input type="text" class="form-control" name="bcode" placeholder="Enter bcode">
       </div>
       <div class="form-group">
-        <label for="inputPwd1">Password</label>
-        <input type="password" class="form-control" id="inputPwd1" placeholder="Password">
+        <label>Username</label>
+        <input type="text" class="form-control" name="id" placeholder="Enter username">
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="text" class="form-control" name="email" placeholder="Enter email">
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control" name="pass" placeholder="Enter password">
       </div>
 
       <button type="submit" class="btn btn-default">Submit</button>
     </form>
-      <button type="button" onclick="location.href='/usercr'" class="btn btn-default">Register account</button>
   </div>
 </div>
 </body>

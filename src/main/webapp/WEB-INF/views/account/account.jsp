@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Sergiu
-  Date: 12/14/2014
-  Time: 10:22 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -82,31 +75,31 @@
     <div class="body">
         <form role="form" method="post" action="/accounts">
             <div class="form-group">
-                <label for="prenume">First Name</label>
+                <label>First Name</label>
                 <input type="text" class="form-control" name="prenume" placeholder="Enter first name">
             </div>
             <div class="form-group">
-                <label for="nume">Last Name</label>
+                <label>Last Name</label>
                 <input type="text" class="form-control" name="nume" placeholder="Enter last name">
             </div>
             <div class="form-group">
-                <label for="cnp">CNP</label>
+                <label>CNP</label>
                 <input type="text" class="form-control" name="cnp" placeholder="Enter CNP">
             </div>
             <div class="form-group">
-                <label for="ci">CI</label>
+                <label>CI</label>
                 <input type="text" class="form-control" name="ci" placeholder="Enter CI">
             </div>
             <div class="form-group">
-                <label for="email">Email address</label>
+                <label>Email address</label>
                 <input type="email" class="form-control" name="email" placeholder="Enter email">
             </div>
             <div class="form-group">
-                <label for="domiciliu">Address</label>
+                <label>Address</label>
                 <input type="text" class="form-control" name="domiciliu" placeholder="Enter address">
             </div>
             <div class="form-group">
-                <label for="telefon">Phone number</label>
+                <label for=>Phone number</label>
                 <input type="text" class="form-control" name="telefon" placeholder="Enter phone number">
             </div>
 
