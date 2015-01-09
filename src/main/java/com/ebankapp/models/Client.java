@@ -4,7 +4,7 @@ package com.ebankapp.models;
 public class Client {
 
     private String id, mail, pass;
-    private int idc, bcode;
+    private long idc, bcode;
 
     public String getId() {
         return id;
@@ -30,19 +30,19 @@ public class Client {
         this.pass = pass;
     }
 
-    public int getIdc() {
+    public long getIdc() {
         return idc;
     }
 
-    public void setIdc(int idc) {
+    public void setIdc(long idc) {
         this.idc = idc;
     }
 
-    public int getBcode() {
+    public long getBcode() {
         return bcode;
     }
 
-    public void setBcode(int bcode) {
+    public void setBcode(long bcode) {
         this.bcode = bcode;
     }
 }

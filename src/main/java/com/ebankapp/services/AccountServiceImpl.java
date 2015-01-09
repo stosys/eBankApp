@@ -5,9 +5,6 @@ import com.ebankapp.repositories.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/**
- * Created by Sergiu on 1/4/2015.
- */
 @Service
 public class AccountServiceImpl implements AccountService{
     @Autowired
@@ -27,12 +24,12 @@ public class AccountServiceImpl implements AccountService{
     }
 
     @Override
-    public Cont update(long id, Cont cont) {
+    public Cont updateCont(long id, Cont cont) {
         return null;
     }
 
     @Override
-    public void delete(long id) {
+    public void deleteCont(long id) {
 
     }
 }
