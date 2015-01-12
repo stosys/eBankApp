@@ -22,7 +22,7 @@ public class ClientRepositoryJDBC implements  ClientRepository{
 
     @Override
     public Client create(Client client){
-        return jdbc.queryForObject("INSERT INTO CLIENTI VALUES(?,?,?,?)",
+        return jdbc.queryForObject("INSERT INTO CLIENTI VALUES(?,?,?,?) RETURNING *",
                 new Object[] {client.getId(),client.getMail(),client.getPass(),client.getBcode()},
                 new ClientRowMapper());
     }
