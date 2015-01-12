@@ -1,6 +1,5 @@
 package com.ebankapp.repositories;
 
-
 import com.ebankapp.models.Cont;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -10,6 +9,10 @@ import org.springframework.stereotype.Repository;
 import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Random;
 
 @Repository
 public class AccountRepositoryJDBC implements AccountRepository {
@@ -20,8 +23,45 @@ public class AccountRepositoryJDBC implements AccountRepository {
         this.jdbc=new JdbcTemplate(ds);
     }
 
+    //GENERARE RANDOM DE NUMAR CONT
+    public static long generateRandom(int length) {
+        Random random = new Random();
+        char[] digits = new char[length];
+        digits[0] = (char) (random.nextInt(9) + '1');
+        for (int i = 1; i < length; i++) {
+            digits[i] = (char) (random.nextInt(10) + '0');
+        }
+        return Long.parseLong(new String(digits));
+    }
+    static private String getDate() {
+        DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
+        Date date = new Date();
+        return dateFormat.format(date);
+    }
+
+
+   //numar cont client
+    public String getNrCont(String s)
+    {
+        String code = "RO";
+        String randomCode = new StringBuilder().append(code).append(getDate()).append(generateRandom(14)).toString();
+        return randomCode;
+    }
+
+    //numar cont special
+    public String getNrContS(String s)
+    {
+        String codeS = "ROS";
+        String randomCodeS = new StringBuilder().append(codeS).append(getDate()).append(generateRandom(13)).toString();
+        return randomCodeS;
+    }
+    public void setInitSold(double sold)
+    {
+        sold  = 0.0;
+    }
     @Override
     public Cont create(Cont cont) {
+      // String c = "a";
         return jdbc.queryForObject("INSERT INTO CONTURI VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)",
                 new Object[]{cont.getNrCard(),cont.getNume(),cont.getPrenume(),cont.getCnp(),cont.getCi(),cont.getDomiciliu(),cont.getMail(),
                         cont.getTip(),cont.getDataCr(),cont.getTelefon(),cont.getSold(),cont.getBcode(),cont.getNrCont()},
