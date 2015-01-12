@@ -4,7 +4,7 @@ import com.ebankapp.models.Client;
 
 public interface ClientRepository {
 
-    public Client create(Client client);
+    Client create(Client client);
     Client update(Client client);
     void delete(Client client);
 }

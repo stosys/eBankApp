@@ -1,7 +1,7 @@
 -- Created by Vertabelo (http://vertabelo.com)
 -- Script type: create
 -- Scope: [tables, references, sequences, views, procedures]
--- Generated at Sun Jan 04 15:37:08 UTC 2015
+-- Generated at Mon Jan 12 06:58:17 UTC 2015
 
 
 
@@ -9,13 +9,13 @@
 -- tables
 -- Table: ANGAJATI
 CREATE TABLE ANGAJATI (
-    IDA serial  NOT NULL,
     NUME varchar(30)  NOT NULL,
     PRENUME varchar(60)  NOT NULL,
     RANG int  NOT NULL,
-    SALARIU money  NOT NULL,
+    SALARIU decimal(10,3)  NOT NULL,
     PAROLA varchar(32)  NOT NULL,
     MAIL varchar(100)  NOT NULL,
+    IDA serial  NOT NULL,
     CONSTRAINT ANGAJATI_pk PRIMARY KEY (IDA)
 );
 
@@ -42,7 +42,7 @@ CREATE TABLE CONTURI (
     CI varchar(8)  NOT NULL,
     ADRESA varchar(255)  NOT NULL,
     MAIL varchar(100)  NOT NULL,
-    TIP int  NOT NULL,
+    TIP varchar(15)  NOT NULL,
     DATA_CR date  NOT NULL,
     TELEFON varchar(15)  NOT NULL,
     SOLD decimal(10,3)  NOT NULL,
@@ -63,7 +63,7 @@ CREATE TABLE CONTURI_SPECIALE (
     ADRESA varchar(255)  NOT NULL,
     TELEFON varchar(15)  NOT NULL,
     MAIL varchar(100)  NOT NULL,
-    SOLD money  NOT NULL,
+    SOLD decimal(10,3)  NOT NULL,
     CONSTRAINT CONTURI_SPECIALE_pk PRIMARY KEY (IDCS)
 );
 
@@ -73,7 +73,7 @@ CREATE TABLE CONTURI_SPECIALE (
 CREATE TABLE OPERATII (
     IDO serial  NOT NULL,
     NR_CONTC varchar(24)  NOT NULL,
-    IDA int  NOT NULL,
+    IDA serial  NOT NULL,
     DATA date  NOT NULL,
     TIP_OP varchar(40)  NOT NULL,
     NR_CONTF varchar(24)  NULL,
@@ -90,16 +90,6 @@ CREATE TABLE OPERATII (
 
 
 -- foreign keys
--- Reference:  ANGAJATI_OPERATII (table: ANGAJATI)
-
-
-ALTER TABLE ANGAJATI ADD CONSTRAINT ANGAJATI_OPERATII 
-    FOREIGN KEY (IDA)
-    REFERENCES OPERATII (IDA)
-    NOT DEFERRABLE 
-    INITIALLY IMMEDIATE 
-;
-
 -- Reference:  CLIENTI_CONTURI (table: CLIENTI)
 
 
@@ -126,6 +116,16 @@ ALTER TABLE CONTURI ADD CONSTRAINT CONTURI_OPERATII
 ALTER TABLE CONTURI_SPECIALE ADD CONSTRAINT CONTURI_SPECIALE_OPERATII 
     FOREIGN KEY (NR_CONT)
     REFERENCES OPERATII (NR_CONTF)
+    NOT DEFERRABLE 
+    INITIALLY IMMEDIATE 
+;
+
+-- Reference:  OPERATII_ANGAJATI (table: OPERATII)
+
+
+ALTER TABLE OPERATII ADD CONSTRAINT OPERATII_ANGAJATI 
+    FOREIGN KEY (IDA)
+    REFERENCES ANGAJATI (IDA)
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE 
 ;

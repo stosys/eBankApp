@@ -22,9 +22,9 @@ public class AccountRepositoryJDBC implements AccountRepository {
 
     @Override
     public Cont create(Cont cont) {
-        return jdbc.queryForObject("INSERT INTO CONTURI VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+        return jdbc.queryForObject("INSERT INTO CONTURI VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)",
                 new Object[]{cont.getNrCard(),cont.getNume(),cont.getPrenume(),cont.getCnp(),cont.getCi(),cont.getDomiciliu(),cont.getMail(),
-                        cont.getTip(),cont.getDataCr(),cont.getTelefon(),cont.getSold(),cont.getBcode(),cont.getNrCont(),cont.getIdc()},
+                        cont.getTip(),cont.getDataCr(),cont.getTelefon(),cont.getSold(),cont.getBcode(),cont.getNrCont()},
                 new ContRowMapper());
     }
 

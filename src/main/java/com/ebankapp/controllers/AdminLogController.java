@@ -5,11 +5,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping(Links.EMPAUTH)
-public class EmpController {
+@RequestMapping(Links.ADMIN)
+public class AdminLogController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String getIndex(){
-        return "employee/empauth";
+        return "admin/adminlog";
     }
 }

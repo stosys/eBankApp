@@ -3,15 +3,16 @@ package com.ebankapp.models;
 
 public class Angajat {
 
-    private String nume, prenume, rang, parola, mail;
-    private int ida;
-    private float salar;
+    private String nume, prenume,parola, mail;
+    private long ida ;
+    private double salar;
+    private int rang;
 
-    Angajat() {
+    public Angajat() {
 
     }
 
-    Angajat(int ida, String nume, String prenume, String rang, String parola, String mail, float salar) {
+    Angajat(long ida, String nume, String prenume, int rang, String parola, String mail, double salar) {
         this.ida = ida;
         this.nume = nume;
         this.prenume = prenume;
@@ -37,11 +38,11 @@ public class Angajat {
         this.prenume = prenume;
     }
 
-    public String getRang() {
+    public int getRang() {
         return rang;
     }
 
-    public void setRang(String rang) {
+    public void setRang(int rang) {
         this.rang = rang;
     }
 
@@ -61,19 +62,19 @@ public class Angajat {
         this.mail = mail;
     }
 
-    public int getIda() {
+    public long getIda() {
         return ida;
     }
 
-    public void setIda(int ida) {
+    public void setIda(long ida) {
         this.ida = ida;
     }
 
-    public float getSalar() {
+    public double getSalar() {
         return salar;
     }
 
-    public void setSalar(float salar) {
+    public void setSalar(double salar) {
         this.salar = salar;
     }
 }

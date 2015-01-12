@@ -6,8 +6,8 @@ import com.ebankapp.models.Cont;
 
 public interface AccountRepository {
 
-    public Cont create(Cont cont);
-    public Cont getById(long id);
+    Cont create(Cont cont);
+    Cont getById(long id);
     Cont update(Cont cont);
     void delete(Cont cont);
 }
