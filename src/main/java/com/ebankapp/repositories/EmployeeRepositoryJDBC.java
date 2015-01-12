@@ -22,7 +22,7 @@ public class EmployeeRepositoryJDBC implements EmployeeRepository{
 
     @Override
     public Angajat create(Angajat angajat) {
-        return jdbc.queryForObject("INSERT INTO ANGAJATI VALUES(?,?,?,?,?,?) RETURN *",
+        return jdbc.queryForObject("INSERT INTO ANGAJATI VALUES(?,?,?,?,?,?) RETURNING *",
                 new Object[] {angajat.getNume(),angajat.getPrenume(),angajat.getRang(),angajat.getSalar(),angajat.getParola(),angajat.getMail()},
                 new EmployeeRowMapper());
     }
@@ -37,11 +37,19 @@ public class EmployeeRepositoryJDBC implements EmployeeRepository{
 
     }
 
+    @Override
+    public Angajat getByEmail(String email) {
+        return jdbc.queryForObject("SELECT * FROM ANGAJATI WHERE MAIL=?",
+                new Object[] {email},
+        new EmployeeRowMapper());
+    }
+
     class EmployeeRowMapper implements RowMapper<Angajat>{
 
         @Override
         public Angajat mapRow(ResultSet resultSet,int i) throws SQLException {
             Angajat angajat = new Angajat();
+            angajat.setIda(resultSet.getLong("IDA"));
             angajat.setMail(resultSet.getString("MAIL"));
             angajat.setSalar(resultSet.getDouble("SALARIU"));
             angajat.setNume(resultSet.getString("NUME"));

@@ -1,6 +1,7 @@
 package com.ebankapp.services;
 
 import com.ebankapp.models.Angajat;
+import com.ebankapp.models.UserPass;
 import com.ebankapp.repositories.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,5 +34,14 @@ public class EmployeeServiceImpl implements EmployeeService{
     @Override
     public void deleteCont(long id) {
 
+    }
+
+    @Override
+    public boolean validate(UserPass userPass) {
+        if (employeeRepository.getByEmail(userPass.getUsername())!=null)
+            if (employeeRepository.getByEmail(userPass.getUsername()).getParola().compareTo(userPass.getPassword())==0)
+                return true;
+                else return false;
+        return false;
     }
 }

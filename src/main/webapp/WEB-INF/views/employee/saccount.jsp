@@ -1,9 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
 <html>
 <head>
-  <title>User Register</title>
-  <!-- Latest compiled and minified CSS -->
+    <title>Special Account Creator</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 
   <!-- Optional theme -->
@@ -73,24 +71,23 @@
     <!-- /.container-fluid -->
   </nav>
   <div class="body">
-    <form role="form" method="post" action="/usercr">
+    <form role="form" method="post" action="/saccounts">
       <div class="form-group">
-        <label>BCODE</label>
-        <input type="text" class="form-control" name="bcode" placeholder="Enter bcode">
+        <label>Facility name</label>
+        <input type="text" class="form-control" name="prenume" placeholder="Enter facility">
       </div>
       <div class="form-group">
-        <label>Username</label>
-        <input type="text" class="form-control" name="id" placeholder="Enter username">
+        <label>Email address</label>
+        <input type="email" class="form-control" name="email" placeholder="Enter email">
       </div>
       <div class="form-group">
-        <label>Email</label>
-        <input type="text" class="form-control" name="mail" placeholder="Enter email">
+        <label>Address</label>
+        <input type="text" class="form-control" name="domiciliu" placeholder="Enter address">
       </div>
       <div class="form-group">
-        <label>Password</label>
-        <input type="password" class="form-control" name="pass" placeholder="Enter password">
+        <label>Phone number</label>
+        <input type="text" class="form-control" name="telefon" placeholder="Enter phone number">
       </div>
-
       <button type="submit" class="btn btn-default">Submit</button>
     </form>
   </div>

@@ -99,22 +99,9 @@
                 <input type="text" class="form-control" name="domiciliu" placeholder="Enter address">
             </div>
             <div class="form-group">
-                <label for=>Phone number</label>
+                <label>Phone number</label>
                 <input type="text" class="form-control" name="telefon" placeholder="Enter phone number">
             </div>
-
-            <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-                    Type
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">1</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">3</a></li>
-                </ul>
-            </div>
-
             <button type="submit" class="btn btn-default">Submit</button>
         </form>
     </div>
